@@ -5,91 +5,46 @@ import Guide from '@/models/Guide'
 
 export async function GET(request: NextRequest) {
   try {
-    await dbConnect()
-
-    const { searchParams } = new URL(request.url)
-    const query = searchParams.get('q')
-    const type = searchParams.get('type') || 'all' // all, attractions, guides
-    const limit = parseInt(searchParams.get('limit') || '10')
-
-    if (!query) {
-      return NextResponse.json(
-        { error: 'Search query is required' },
-        { status: 400 }
-      )
-    }
-
-    const searchRegex = new RegExp(query, 'i')
-    
-    let results: {
-      attractions: any[];
-      guides: any[];
-      total: number;
-    } = {
-      attractions: [],
-      guides: [],
-      total: 0
-    }
-
-    // Search attractions
-    if (type === 'all' || type === 'attractions') {
-      const attractions = await Attraction.find({
-        isActive: true,
-        $or: [
-          { 'name.en': searchRegex },
-          { 'name.zh': searchRegex },
-          { 'description.en': searchRegex },
-          { 'description.zh': searchRegex },
-          { 'location.city': searchRegex },
-          { 'location.province': searchRegex },
-          { highlights: { $in: [searchRegex] } },
+    // 为静态导出返回静态数据
+    const staticResults = {
+      results: {
+        attractions: [
+          {
+            _id: '1',
+            name: { en: 'Great Wall of China', zh: '长城' },
+            description: { en: 'A series of fortifications and walls built to protect ancient Chinese states', zh: '古代中国为防御侵略而建造的一系列防御工事' },
+            location: { city: 'Beijing', province: 'Beijing' },
+            images: ['https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
+            category: 'historical',
+            rating: 4.8,
+            reviewCount: 15420,
+            type: 'attraction'
+          }
         ],
-      })
-        .limit(type === 'attractions' ? limit : Math.floor(limit / 2))
-        .select('name description location images category rating reviewCount')
-        .lean()
-
-      results.attractions = attractions.map(attraction => ({
-        ...attraction,
-        type: 'attraction'
-      }))
-    }
-
-    // Search guides
-    if (type === 'all' || type === 'guides') {
-      const guides = await Guide.find({
-        isPublished: true,
-        $or: [
-          { 'title.en': searchRegex },
-          { 'title.zh': searchRegex },
-          { 'excerpt.en': searchRegex },
-          { 'excerpt.zh': searchRegex },
-          { 'content.en': searchRegex },
-          { 'content.zh': searchRegex },
-          { tags: { $in: [searchRegex] } },
+        guides: [
+          {
+            _id: '1',
+            title: { en: 'First Time Visiting Beijing', zh: '第一次访问北京' },
+            excerpt: { en: 'Complete guide for first-time visitors to Beijing', zh: '第一次访问北京的完整指南' },
+            coverImage: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            category: 'city-guide',
+            readTime: 15,
+            views: 12500,
+            likes: 350,
+            author: { name: 'Travel Expert' },
+            type: 'guide'
+          }
         ],
-      })
-        .populate('author', 'name image')
-        .limit(type === 'guides' ? limit : Math.floor(limit / 2))
-        .select('title excerpt coverImage category tags readTime views likes publishedAt author')
-        .lean()
-
-      results.guides = guides.map(guide => ({
-        ...guide,
-        type: 'guide'
-      }))
+        total: 2
+      },
+      suggestions: [
+        { text: 'Beijing', type: 'city' },
+        { text: 'Great Wall', type: 'attraction' }
+      ],
+      query: 'beijing'
     }
 
-    results.total = results.attractions.length + results.guides.length
-
-    // Search suggestions
-    const suggestions = await generateSearchSuggestions(query)
-
-    return NextResponse.json({
-      results,
-      suggestions,
-      query,
-    })
+    return NextResponse.json(staticResults)
 
   } catch (error) {
     console.error('Search error:', error)

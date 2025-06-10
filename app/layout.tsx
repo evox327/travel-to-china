@@ -74,9 +74,19 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBBBVNMHG4"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-BBBBVNMHG4');
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>
-        {ga_id && <GoogleAnalytics ga_id={ga_id} />}
         <Providers>
           {children}
         </Providers>

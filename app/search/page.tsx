@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -40,7 +40,7 @@ interface SearchSuggestion {
   type: 'attraction' | 'city' | 'category'
 }
 
-const SearchPage = () => {
+const SearchContent = () => {
   const searchParams = useSearchParams()
   const router = useRouter()
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '')
@@ -423,6 +423,22 @@ const SearchPage = () => {
 
       <Footer />
     </div>
+  )
+}
+
+const SearchPage = () => {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50">
+        <Header />
+        <div className="pt-16 flex items-center justify-center h-64">
+          <Loader2 className="h-12 w-12 animate-spin text-red-600" />
+        </div>
+        <Footer />
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   )
 }
 
