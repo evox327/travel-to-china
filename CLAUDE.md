@@ -7,7 +7,8 @@
 - **技术栈**: Next.js 14, TypeScript, Tailwind CSS
 
 ## GitHub 配置
-- **仓库地址**: (待配置 - 如果需要GitHub集成)
+- **仓库地址**: https://github.com/evox327/travel-to-china.git
+- **用户名**: evox327
 - **主分支**: main
 - **推送命令**:
   ```bash
@@ -15,6 +16,21 @@
   git commit -m "更新内容"
   git push origin main
   ```
+
+### 快速 Git 操作
+```bash
+# 添加所有更改
+git add .
+
+# 提交更改
+git commit -m "描述更改内容"
+
+# 推送到 GitHub
+git push origin main
+
+# 检查状态
+git status
+```
 
 ## Cloudflare Pages 部署配置
 
@@ -53,9 +69,34 @@
 - **静态资源路径**: /_next/static/
 - **HTML 文件路径**: deploy/ 根目录
 
-## 快速部署命令
+## 完整部署工作流
+
+### 1. 推送到 GitHub
+```bash
+git add .
+git commit -m "描述更改内容"
+git push origin main
+```
+
+### 2. 部署到 Cloudflare Pages
 ```bash
 # 一键部署命令 (按顺序执行)
+npm run build
+rm -rf deploy && mkdir -p deploy/_next
+cp -r .next/server/app/* deploy/
+cp -r .next/static deploy/_next/
+cp -r public/* deploy/
+wrangler pages deploy deploy --project-name=travel-to-china --commit-dirty=true
+```
+
+### 3. 完整工作流 (GitHub + Cloudflare)
+```bash
+# 步骤1: 推送到 GitHub
+git add .
+git commit -m "更新网站内容"
+git push origin main
+
+# 步骤2: 部署到 Cloudflare
 npm run build
 rm -rf deploy && mkdir -p deploy/_next
 cp -r .next/server/app/* deploy/
