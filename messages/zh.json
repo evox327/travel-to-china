@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "首页",
+    "attractions": "景点",
+    "guides": "旅游攻略",
+    "about": "关于中国",
+    "login": "登录",
+    "signup": "注册"
+  },
+  "hero": {
+    "title": "探索神奇中国",
+    "subtitle": "您探索中国令人难以置信的目的地、丰富文化和难忘体验的终极指南",
+    "cta": "开始您的旅程"
+  },
+  "features": {
+    "attractions": {
+      "title": "著名景点",
+      "description": "探索中国最具标志性的地标和隐藏的宝石"
+    },
+    "guides": {
+      "title": "专家指南",
+      "description": "由当地专家撰写的详细旅游指南"
+    },
+    "culture": {
+      "title": "丰富文化",
+      "description": "沉浸在5000年的中华文明中"
+    }
+  }
+}

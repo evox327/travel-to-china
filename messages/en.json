@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Home",
+    "attractions": "Attractions",
+    "guides": "Travel Guides",
+    "about": "About China",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "hero": {
+    "title": "Discover the Magic of China",
+    "subtitle": "Your ultimate guide to exploring China's incredible destinations, rich culture, and unforgettable experiences",
+    "cta": "Start Your Journey"
+  },
+  "features": {
+    "attractions": {
+      "title": "Famous Attractions",
+      "description": "Explore China's most iconic landmarks and hidden gems"
+    },
+    "guides": {
+      "title": "Expert Guides", 
+      "description": "Detailed travel guides written by local experts"
+    },
+    "culture": {
+      "title": "Rich Culture",
+      "description": "Immerse yourself in 5000 years of Chinese civilization"
+    }
+  }
+}
