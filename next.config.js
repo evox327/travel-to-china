@@ -2,6 +2,8 @@ const withNextIntl = require('next-intl/plugin')('./i18n.js');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
     domains: ['images.unsplash.com', 'unsplash.com'],
   },
@@ -40,6 +42,8 @@ const nextConfig = {
       },
     ];
   },
+  // Cloudflare Pages 兼容配置
+  output: 'standalone',
 }
 
 module.exports = withNextIntl(nextConfig);

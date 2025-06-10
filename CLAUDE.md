@@ -110,11 +110,30 @@ wrangler pages deploy deploy --project-name=travel-to-china --commit-dirty=true
 - **测试访问**: https://explorechina.top
 - **CSS 验证**: https://explorechina.top/_next/static/css/[hash].css
 
+## Google Analytics 配置
+- **组件位置**: components/GoogleAnalytics.tsx
+- **环境变量**: NEXT_PUBLIC_GA_ID (需要在 .env.local 中设置)
+- **访问统计**: https://analytics.google.com/
+- **设置步骤**:
+  1. 访问 https://analytics.google.com/ 创建账户
+  2. 获取追踪 ID (格式: G-XXXXXXXXXX)
+  3. 在 .env.local 中添加: `NEXT_PUBLIC_GA_ID=你的追踪ID`
+  4. 重新部署网站
+
+## Google Search Console 配置
+- **URL**: https://search.google.com/search-console
+- **用途**: 监控搜索表现、索引状态、SEO问题
+- **验证方法**: 
+  1. 添加 explorechina.top 作为资源
+  2. 使用 Google Analytics 验证或 HTML 标签验证
+  3. 提交网站地图: https://explorechina.top/sitemap.xml
+
 ## 注意事项
 1. **API 路由限制**: 静态部署无法运行 API，已添加静态数据备用方案
 2. **缓存清理**: 部署后可能需要 5-15 分钟域名同步
 3. **文件大小限制**: 单文件不超过 25MB
 4. **构建输出**: 使用 standalone 模式，然后手动组织文件结构
+5. **Analytics**: 需要设置 Google Analytics 追踪 ID 才能查看访问数据
 
 ## 故障排除
 - **404 错误**: 检查文件路径和部署结构

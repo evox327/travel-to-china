@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Providers } from '@/components/Providers'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -54,6 +55,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const ga_id = process.env.NEXT_PUBLIC_GA_ID
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -73,6 +76,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={inter.className}>
+        {ga_id && <GoogleAnalytics ga_id={ga_id} />}
         <Providers>
           {children}
         </Providers>

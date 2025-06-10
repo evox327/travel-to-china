@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "pages:build": "npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "next lint",
     "seed": "ts-node scripts/seed.ts"
   },
   "dependencies": {
+    "@cloudflare/next-on-pages": "^1.13.12",
     "@next/font": "^14.0.0",
     "autoprefixer": "^10.4.0",
     "bcryptjs": "^2.4.3",
