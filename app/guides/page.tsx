@@ -71,6 +71,63 @@ const GuidesPage = () => {
       setTotalPages(data.pagination.pages)
     } catch (error) {
       console.error('Error fetching guides:', error)
+      // 静态数据备用方案
+      const staticGuides: Guide[] = [
+        {
+          _id: '1',
+          title: { en: 'First Time in Beijing: Complete 7-Day Guide', zh: '北京初游：完整7日攻略' },
+          excerpt: { en: 'Everything you need to know for your first visit to China\'s capital city, including must-see attractions, local food, and cultural tips.', zh: '初次游览中国首都所需了解的一切，包括必看景点、当地美食和文化贴士。' },
+          author: { name: 'Li Wei', image: '/images/authors/li-wei.jpg' },
+          category: 'first-time',
+          tags: ['Beijing', 'First Time', 'Culture', 'Food'],
+          coverImage: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          readTime: 15,
+          views: 24680,
+          likes: 892,
+          publishedAt: '2024-01-15'
+        },
+        {
+          _id: '2',
+          title: { en: 'Ultimate Food Guide to Shanghai', zh: '上海美食终极指南' },
+          excerpt: { en: 'Discover the best local dishes, street food, and fine dining experiences in Shanghai\'s vibrant culinary scene.', zh: '发现上海充满活力的美食场景中最好的当地菜肴、街头小吃和精致餐饮体验。' },
+          author: { name: 'Zhang Mei', image: '/images/authors/zhang-mei.jpg' },
+          category: 'food-culture',
+          tags: ['Shanghai', 'Food', 'Restaurants', 'Street Food'],
+          coverImage: 'https://images.unsplash.com/photo-1526297003708-f5a1cd62d04a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          readTime: 12,
+          views: 18920,
+          likes: 654,
+          publishedAt: '2024-01-10'
+        },
+        {
+          _id: '3',
+          title: { en: 'Adventure Travel in Yunnan Province', zh: '云南省探险旅游' },
+          excerpt: { en: 'Epic hiking trails, mountain climbing, and outdoor adventures in one of China\'s most diverse provinces.', zh: '在中国最多样化的省份之一体验史诗般的徒步旅行、登山和户外探险。' },
+          author: { name: 'Wang Hao', image: '/images/authors/wang-hao.jpg' },
+          category: 'adventure',
+          tags: ['Yunnan', 'Adventure', 'Hiking', 'Mountains'],
+          coverImage: 'https://images.unsplash.com/photo-1544376664-80b17f09d399?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          readTime: 18,
+          views: 15360,
+          likes: 723,
+          publishedAt: '2024-01-05'
+        },
+        {
+          _id: '4',
+          title: { en: 'Budget Travel: 2 Weeks in China Under $800', zh: '预算旅行：800美元玩转中国两周' },
+          excerpt: { en: 'Complete budget guide showing how to explore China for two weeks without breaking the bank, including accommodation and transport tips.', zh: '完整的预算指南，展示如何在不花费太多的情况下游览中国两周，包括住宿和交通贴士。' },
+          author: { name: 'Chen Yu', image: '/images/authors/chen-yu.jpg' },
+          category: 'budget',
+          tags: ['Budget', 'Backpacking', 'Transportation', 'Accommodation'],
+          coverImage: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          readTime: 20,
+          views: 32180,
+          likes: 1245,
+          publishedAt: '2023-12-28'
+        }
+      ]
+      setGuides(staticGuides)
+      setTotalPages(1)
     }
     setLoading(false)
   }

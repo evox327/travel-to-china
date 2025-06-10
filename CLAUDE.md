@@ -1,0 +1,86 @@
+# 项目部署配置
+
+## 基本信息
+- **项目名称**: travel-to-china (中国旅游网站)
+- **项目路径**: /Users/luxiang/Cursor/AI-project/travel-to-china
+- **自定义域名**: https://explorechina.top
+- **技术栈**: Next.js 14, TypeScript, Tailwind CSS
+
+## GitHub 配置
+- **仓库地址**: (待配置 - 如果需要GitHub集成)
+- **主分支**: main
+- **推送命令**:
+  ```bash
+  git add .
+  git commit -m "更新内容"
+  git push origin main
+  ```
+
+## Cloudflare Pages 部署配置
+
+### 项目信息
+- **项目名称**: travel-to-china
+- **生产域名**: explorechina.top
+- **临时域名**: travel-to-china.pages.dev
+
+### 部署流程
+1. **构建项目**:
+   ```bash
+   npm run build
+   ```
+
+2. **准备部署文件**:
+   ```bash
+   rm -rf deploy && mkdir -p deploy/_next
+   cp -r .next/server/app/* deploy/
+   cp -r .next/static deploy/_next/
+   cp -r public/* deploy/
+   ```
+
+3. **部署到 Cloudflare Pages**:
+   ```bash
+   wrangler pages deploy deploy --project-name=travel-to-china --commit-dirty=true
+   ```
+
+### 部署配置文件
+- **wrangler.toml**: 已配置
+- **缓存控制**: _headers 文件已配置
+- **路由重定向**: _redirects 文件已配置
+
+### 关键配置
+- **兼容性日期**: 2023-10-02
+- **Node.js 兼容**: 已启用
+- **静态资源路径**: /_next/static/
+- **HTML 文件路径**: deploy/ 根目录
+
+## 快速部署命令
+```bash
+# 一键部署命令 (按顺序执行)
+npm run build
+rm -rf deploy && mkdir -p deploy/_next
+cp -r .next/server/app/* deploy/
+cp -r .next/static deploy/_next/
+cp -r public/* deploy/
+wrangler pages deploy deploy --project-name=travel-to-china --commit-dirty=true
+```
+
+## 验证部署
+- **检查最新部署**: `wrangler pages deployment list --project-name=travel-to-china`
+- **测试访问**: https://explorechina.top
+- **CSS 验证**: https://explorechina.top/_next/static/css/[hash].css
+
+## 注意事项
+1. **API 路由限制**: 静态部署无法运行 API，已添加静态数据备用方案
+2. **缓存清理**: 部署后可能需要 5-15 分钟域名同步
+3. **文件大小限制**: 单文件不超过 25MB
+4. **构建输出**: 使用 standalone 模式，然后手动组织文件结构
+
+## 故障排除
+- **404 错误**: 检查文件路径和部署结构
+- **CSS 不加载**: 确认 /_next/static/ 路径正确
+- **域名不同步**: 等待 CDN 缓存更新或强制刷新浏览器
+- **构建失败**: 检查 search 页面和 API 路由问题
+
+---
+*最后更新: 2025-06-10*
+*部署状态: ✅ 正常运行*
