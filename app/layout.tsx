@@ -71,8 +71,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Discover China" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg" />
         <link rel="manifest" href="/manifest.json" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBBBVNMHG4"></script>
         <script
@@ -106,7 +107,7 @@ export default function RootLayout({
                 "url": "https://discoverchina.com",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://discoverchina.com/icons/icon-512x512.png"
+                  "url": "https://explorechina.top/icons/icon-512.svg"
                 }
               },
               "mainEntity": {

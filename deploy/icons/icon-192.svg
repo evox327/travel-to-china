@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <!-- Background circle with Chinese red -->
+  <circle cx="96" cy="96" r="88" fill="#dc2626" stroke="#ffffff" stroke-width="6"/>
+  
+  <!-- Great Wall silhouette -->
+  <path d="M25 130 L35 122 L45 126 L55 118 L65 122 L75 114 L85 118 L95 110 L105 114 L115 106 L125 110 L135 102 L145 106 L155 98 L165 102 L175 94" 
+        stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Traditional Chinese architecture -->
+  <path d="M65 75 L75 65 L85 70 L95 60 L105 70 L115 65 L125 75 L115 80 L105 75 L95 80 L85 75 L75 80 Z" 
+        fill="#ffffff"/>
+  
+  <!-- Mountain silhouettes -->
+  <path d="M20 130 L35 115 L50 125 L65 110 L80 120 L95 105 L110 115 L125 100 L140 110 L155 95 L170 105 L185 130" 
+        fill="#ffffff" opacity="0.25"/>
+  
+  <!-- Chinese elements -->
+  <g transform="translate(88,88)" fill="#ffffff">
+    <rect x="0" y="0" width="3" height="16" rx="1.5"/>
+    <rect x="8" y="0" width="3" height="16" rx="1.5"/>
+    <rect x="16" y="0" width="3" height="16" rx="1.5"/>
+    <rect x="-2" y="10" width="23" height="3" rx="1.5"/>
+  </g>
+  
+  <!-- Location pin -->
+  <circle cx="96" cy="50" r="12" fill="#ffffff"/>
+  <circle cx="96" cy="50" r="6" fill="#dc2626"/>
+  
+  <!-- Travel elements -->
+  <g transform="translate(130,50)" fill="#ffffff" opacity="0.8">
+    <circle cx="0" cy="0" r="3"/>
+    <circle cx="10" cy="5" r="2"/>
+    <circle cx="15" cy="-5" r="2.5"/>
+  </g>
+</svg>
