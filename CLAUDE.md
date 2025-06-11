@@ -111,14 +111,13 @@ wrangler pages deploy deploy --project-name=travel-to-china --commit-dirty=true
 - **CSS 验证**: https://explorechina.top/_next/static/css/[hash].css
 
 ## Google Analytics 配置
+- **状态**: ✅ 已成功集成
+- **追踪 ID**: G-BBBBVNMHG4
 - **组件位置**: components/GoogleAnalytics.tsx
-- **环境变量**: NEXT_PUBLIC_GA_ID (需要在 .env.local 中设置)
+- **实现方式**: 直接在 HTML head 中嵌入 gtag 代码
 - **访问统计**: https://analytics.google.com/
-- **设置步骤**:
-  1. 访问 https://analytics.google.com/ 创建账户
-  2. 获取追踪 ID (格式: G-XXXXXXXXXX)
-  3. 在 .env.local 中添加: `NEXT_PUBLIC_GA_ID=你的追踪ID`
-  4. 重新部署网站
+- **数据流ID**: 11333326603
+- **验证**: 网站首页已包含 Google Analytics 代码
 
 ## Google Search Console 配置
 - **URL**: https://search.google.com/search-console
@@ -141,6 +140,19 @@ wrangler pages deploy deploy --project-name=travel-to-china --commit-dirty=true
 - **域名不同步**: 等待 CDN 缓存更新或强制刷新浏览器
 - **构建失败**: 检查 search 页面和 API 路由问题
 
+## 版本发布记录
+- **v0.10** (2025-06-10): 修复构建错误，成功集成 Google Analytics
+- **v0.9** (2025-06-10): 添加 Google Analytics 支持  
+- **v0.8** (2025-06-10): 更新部署配置文件
+- **v0.7** (2025-06-10): 添加 Cloudflare Pages 部署配置和静态数据备用方案
+
+## 当前部署信息
+- **Cloudflare Pages URL**: https://e47f420d.travel-to-china.pages.dev
+- **自定义域名**: https://explorechina.top
+- **GitHub 版本**: v0.10
+- **Google Analytics**: ✅ 已激活 (G-BBBBVNMHG4)
+
 ---
 *最后更新: 2025-06-10*
+*当前版本: v0.10*
 *部署状态: ✅ 正常运行*

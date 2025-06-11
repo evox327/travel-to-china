@@ -24,8 +24,8 @@ const attractions = [
       },
     },
     images: [
-      'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1583481412103-029f2bdf75b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      '/images/hero-great-wall-large.jpg',
+      '/images/attraction-sample1.jpg',
     ],
     category: 'historical',
     rating: 4.9,
@@ -66,8 +66,8 @@ const attractions = [
       },
     },
     images: [
-      'https://images.unsplash.com/photo-1583481412103-029f2bdf75b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      '/images/attraction-sample1.jpg',
+      '/images/beijing-shanghai-journey-large.jpg',
     ],
     category: 'historical',
     rating: 4.8,
@@ -108,7 +108,7 @@ const attractions = [
       },
     },
     images: [
-      'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      '/images/attraction-sample2.jpg',
     ],
     category: 'historical',
     rating: 4.7,
@@ -147,7 +147,7 @@ const attractions = [
       },
     },
     images: [
-      'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      '/images/map-background-large.jpg',
     ],
     category: 'natural',
     rating: 4.6,
@@ -186,9 +186,9 @@ const guides = [
     },
     category: 'multi-city',
     tags: ['First Time', 'Culture', 'History', 'Food'],
-    coverImage: 'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    coverImage: '/images/beijing-shanghai-journey.jpg',
     images: [
-      'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      '/images/beijing-shanghai-journey.jpg',
     ],
     readTime: 12,
     views: 15200,
@@ -211,9 +211,9 @@ const guides = [
     },
     category: 'food-culture',
     tags: ['Food', 'Spicy', 'Local Experience', 'Chengdu'],
-    coverImage: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    coverImage: '/images/sichuan-food.jpg',
     images: [
-      'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      '/images/sichuan-food.jpg',
     ],
     readTime: 8,
     views: 22700,
@@ -254,7 +254,7 @@ export async function seedDatabase() {
       password: authorPassword,
       role: 'user',
       emailVerified: new Date(),
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      image: '/images/author-sarah-chen-small.jpg',
     })
 
     const author2 = await User.create({
@@ -263,7 +263,7 @@ export async function seedDatabase() {
       password: authorPassword,
       role: 'user',
       emailVerified: new Date(),
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      image: '/images/author-michael-zhang.jpg',
     })
 
     console.log('Created sample users')

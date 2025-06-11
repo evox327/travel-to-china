@@ -92,7 +92,7 @@ const MapView = ({
           <div 
             className="w-full h-full bg-gradient-to-br from-green-100 via-blue-50 to-blue-100 flex items-center justify-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')`,
+              backgroundImage: `url('/images/map-background.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}

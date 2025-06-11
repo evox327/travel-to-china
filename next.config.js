@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['images.unsplash.com', 'unsplash.com'],
+    domains: [],
   },
   // PWA Configuration
   async headers() {

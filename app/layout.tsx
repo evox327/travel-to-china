@@ -22,7 +22,7 @@ export const metadata = {
     siteName: 'Discover China',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+        url: '/images/hero-great-wall-large.jpg',
         width: 1200,
         height: 630,
         alt: 'Great Wall of China'
@@ -35,7 +35,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Discover China - Your Ultimate Travel Guide',
     description: 'Explore China\'s incredible destinations, rich culture, and unforgettable experiences.',
-    images: ['https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'],
+    images: ['/images/hero-great-wall-large.jpg'],
   },
   robots: {
     index: true,

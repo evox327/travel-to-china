@@ -42,19 +42,19 @@ const AboutPage = () => {
     {
       name: 'Li Wei',
       role: 'Founder & CEO',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
+      image: '/images/author-li-wei.jpg',
       bio: '15+ years in travel industry, passionate about showcasing China\'s beauty to the world.'
     },
     {
       name: 'Sarah Chen',
       role: 'Head of Content',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
+      image: '/images/author-sarah-chen.jpg',
       bio: 'Travel writer and photographer, author of 20+ comprehensive China travel guides.'
     },
     {
       name: 'Michael Zhang',
       role: 'Cultural Expert',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
+      image: '/images/author-michael-zhang.jpg',
       bio: 'Cultural historian specializing in Chinese traditions, cuisine, and local customs.'
     }
   ]
@@ -137,7 +137,7 @@ const AboutPage = () => {
               
               <div className="mt-12 lg:mt-0">
                 <img
-                  src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/images/hero-great-wall.jpg"
                   alt="Great Wall of China"
                   className="rounded-2xl shadow-2xl"
                 />

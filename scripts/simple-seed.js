@@ -76,8 +76,8 @@ const attractions = [
       },
     },
     images: [
-      'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1583481412103-029f2bdf75b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      '/images/hero-great-wall-large.jpg',
+      '/images/attraction-sample1.jpg',
     ],
     category: 'historical',
     rating: 4.9,
@@ -119,8 +119,8 @@ const attractions = [
       },
     },
     images: [
-      'https://images.unsplash.com/photo-1583481412103-029f2bdf75b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      '/images/attraction-sample1.jpg',
+      '/images/beijing-shanghai-journey-large.jpg',
     ],
     category: 'historical',
     rating: 4.8,
@@ -162,7 +162,7 @@ const attractions = [
       },
     },
     images: [
-      'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      '/images/attraction-sample2.jpg',
     ],
     category: 'historical',
     rating: 4.7,

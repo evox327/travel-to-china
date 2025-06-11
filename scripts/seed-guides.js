@@ -68,9 +68,9 @@ const guides = [
     },
     category: 'multi-city',
     tags: ['First Time', 'Culture', 'History', 'Food'],
-    coverImage: 'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    coverImage: '/images/beijing-shanghai-journey.jpg',
     images: [
-      'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/beijing-shanghai-journey.jpg'
     ],
     readTime: 12,
     views: 15200,
@@ -93,9 +93,9 @@ const guides = [
     },
     category: 'food-culture',
     tags: ['Food', 'Spicy', 'Local Experience', 'Chengdu'],
-    coverImage: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    coverImage: '/images/sichuan-food.jpg',
     images: [
-      'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/sichuan-food.jpg'
     ],
     readTime: 8,
     views: 22700,
@@ -118,9 +118,9 @@ const guides = [
     },
     category: 'first-time',
     tags: ['Great Wall', 'History', 'Hiking', 'Beijing'],
-    coverImage: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    coverImage: '/images/hero-great-wall.jpg',
     images: [
-      'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/hero-great-wall.jpg'
     ],
     readTime: 6,
     views: 18500,
@@ -143,9 +143,9 @@ const guides = [
     },
     category: 'budget',
     tags: ['Budget', 'Backpacking', 'Money Saving', 'Tips'],
-    coverImage: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    coverImage: '/images/map-background.jpg',
     images: [
-      'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/map-background.jpg'
     ],
     readTime: 10,
     views: 12300,
@@ -168,9 +168,9 @@ const guides = [
     },
     category: 'adventure',
     tags: ['Hiking', 'Nature', 'Adventure', 'Photography'],
-    coverImage: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    coverImage: '/images/zhangjiajie-hiking.jpg',
     images: [
-      'https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/zhangjiajie-hiking.jpg'
     ],
     readTime: 9,
     views: 8900,
@@ -193,9 +193,9 @@ const guides = [
     },
     category: 'luxury',
     tags: ['Luxury', 'Hotels', 'Fine Dining', 'Premium'],
-    coverImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    coverImage: '/images/luxury-travel.jpg',
     images: [
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/images/luxury-travel.jpg'
     ],
     readTime: 7,
     views: 6700,
@@ -217,7 +217,7 @@ async function seedGuides() {
         email: 'sarah@discoverchina.com',
         role: 'user',
         emailVerified: new Date(),
-        image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
+        image: '/images/author-sarah-chen-small.jpg'
       });
     }
 
@@ -228,7 +228,7 @@ async function seedGuides() {
         email: 'michael@discoverchina.com',
         role: 'user',
         emailVerified: new Date(),
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
+        image: '/images/author-michael-zhang.jpg'
       });
     }
 
@@ -239,7 +239,7 @@ async function seedGuides() {
         email: 'lisa@discoverchina.com',
         role: 'user',
         emailVerified: new Date(),
-        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
+        image: '/images/author-lisa-wang.jpg'
       });
     }
 
