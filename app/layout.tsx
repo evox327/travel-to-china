@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Discover China - Your Ultimate Travel Guide',
   description: 'Explore China\'s incredible destinations, rich culture, and unforgettable experiences. Your trusted companion for traveling in China.',
-  keywords: 'China travel, tourism, attractions, travel guide, Beijing, Shanghai, Great Wall',
+  keywords: 'China travel, tourism, attractions, travel guide, Beijing, Shanghai, Great Wall, China vacation, Chinese culture, travel tips China, China destinations, China itinerary, things to do China, China sightseeing, best places China, China adventure, traditional China, modern China, China history, China food, China hotels, China transportation, China visa, China weather',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
@@ -83,6 +83,42 @@ export default function RootLayout({
               gtag('js', new Date());
               gtag('config', 'G-BBBBVNMHG4');
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Discover China",
+              "alternateName": "Discover China - Your Ultimate Travel Guide",
+              "url": "https://discoverchina.com",
+              "description": "Explore China's incredible destinations, rich culture, and unforgettable experiences. Your trusted companion for traveling in China.",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://discoverchina.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Discover China",
+                "url": "https://discoverchina.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://discoverchina.com/icons/icon-512x512.png"
+                }
+              },
+              "mainEntity": {
+                "@type": "TravelAgency",
+                "name": "Discover China",
+                "description": "Expert travel guides and comprehensive information for exploring China",
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "China"
+                }
+              }
+            })
           }}
         />
       </head>
