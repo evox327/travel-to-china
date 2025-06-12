@@ -138,6 +138,10 @@ const FeaturedAttractions = () => {
               key={attraction._id}
               href={`/attractions/${attraction._id}`}
               className="group bg-white rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer block"
+              onClick={(e) => {
+                console.log('Link clicked:', `/attractions/${attraction._id}`);
+                console.log('Event:', e);
+              }}
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">

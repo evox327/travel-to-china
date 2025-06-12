@@ -127,6 +127,10 @@ const TravelGuides = () => {
               key={guide._id}
               href={`/guides/${guide._id}`}
               className="group bg-white rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer block"
+              onClick={(e) => {
+                console.log('Guide link clicked:', `/guides/${guide._id}`);
+                console.log('Event:', e);
+              }}
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">

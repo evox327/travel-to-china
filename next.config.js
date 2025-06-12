@@ -42,8 +42,11 @@ const nextConfig = {
       },
     ];
   },
-  // Cloudflare Pages 兼容配置
-  output: 'standalone',
+  // Cloudflare Pages SPA 配置
+  trailingSlash: false,
+  images: {
+    unoptimized: true,
+  },
 }
 
 module.exports = withNextIntl(nextConfig);
