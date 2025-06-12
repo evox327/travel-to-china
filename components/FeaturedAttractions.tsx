@@ -41,6 +41,58 @@ const FeaturedAttractions = () => {
       setAttractions(data.attractions || [])
     } catch (error) {
       console.error('Error fetching attractions:', error)
+      // 静态数据备用方案
+      const staticAttractions: Attraction[] = [
+        {
+          _id: '1',
+          name: { en: 'Great Wall of China', zh: '长城' },
+          description: { en: 'One of the greatest wonders of the world, the Great Wall winds like a dragon through mountains and valleys for over 13,000 miles.', zh: '世界上最伟大的奇迹之一，长城如巨龙般蜿蜒穿越山谷，总长超过13000英里。' },
+          location: { city: 'Beijing', province: 'Beijing' },
+          images: ['/images/hero-great-wall.jpg'],
+          category: 'historical',
+          rating: 4.8,
+          reviewCount: 15420,
+          highlights: ['UNESCO World Heritage', 'Ancient Architecture', 'Mountain Views'],
+          duration: '4-6 hours'
+        },
+        {
+          _id: '2',
+          name: { en: 'Forbidden City', zh: '紫禁城' },
+          description: { en: 'A magnificent palace complex that served as the home of emperors for nearly 500 years, showcasing traditional Chinese architecture.', zh: '宏伟的宫殿建筑群，曾是近500年来皇帝的居所，展示了传统中国建筑风格。' },
+          location: { city: 'Beijing', province: 'Beijing' },
+          images: ['/images/forbidden-city.jpg'],
+          category: 'historical',
+          rating: 4.7,
+          reviewCount: 23150,
+          highlights: ['Imperial Palace', 'Traditional Architecture', 'Historical Artifacts'],
+          duration: '3-4 hours'
+        },
+        {
+          _id: '3',
+          name: { en: 'Zhangjiajie National Forest Park', zh: '张家界国家森林公园' },
+          description: { en: 'Famous for its towering sandstone pillars and pristine natural beauty, this park inspired the floating mountains in Avatar.', zh: '以耸立的砂岩柱和原始自然美景著称，这个公园启发了《阿凡达》中的悬浮山。' },
+          location: { city: 'Zhangjiajie', province: 'Hunan' },
+          images: ['/images/zhangjiajie-mountains.jpg'],
+          category: 'natural',
+          rating: 4.9,
+          reviewCount: 8920,
+          highlights: ['Avatar Mountains', 'Glass Bridge', 'Cable Cars'],
+          duration: 'Full day'
+        },
+        {
+          _id: '4',
+          name: { en: 'Li River Cruise', zh: '漓江游船' },
+          description: { en: 'A scenic cruise along the Li River featuring stunning karst landscape and traditional Chinese countryside views.', zh: '沿漓江的风景游船，欣赏迷人的喀斯特地貌和传统中国乡村景色。' },
+          location: { city: 'Guilin', province: 'Guangxi' },
+          images: ['/images/li-river-cruise.jpg'],
+          category: 'natural',
+          rating: 4.6,
+          reviewCount: 12840,
+          highlights: ['Karst Mountains', 'River Cruise', 'Rural Scenery'],
+          duration: '4-5 hours'
+        }
+      ]
+      setAttractions(staticAttractions)
     } finally {
       setLoading(false)
     }

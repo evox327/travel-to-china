@@ -172,7 +172,7 @@ This comprehensive guide will help you make the most of your Beijing adventure!`
         author: {
           _id: '1',
           name: 'Li Wei',
-          image: '/images/author-li-wei.jpg'
+          image: '/images/avatar-li-wei.jpg'
         },
         category: 'city-guide',
         tags: ['Beijing', 'First Time', 'Culture', 'Food', 'History'],

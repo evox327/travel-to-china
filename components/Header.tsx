@@ -2,13 +2,14 @@
 
 import { useState } from 'react'
 import { useSession, signOut } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { Globe, Menu, X, MapPin, User, LogOut, Search } from 'lucide-react'
 import AuthModal from './AuthModal'
 
 const Header = () => {
   const { data: session, status } = useSession()
   const router = useRouter()
+  const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [currentLang, setCurrentLang] = useState('en')
   const [showAuthModal, setShowAuthModal] = useState(false)
@@ -42,6 +43,14 @@ const Header = () => {
     }
   }
 
+  // 检查当前路径是否与导航项匹配
+  const isActiveRoute = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(href)
+  }
+
   return (
     <header className="bg-white shadow-lg fixed w-full top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,9 +69,16 @@ const Header = () => {
               <a
                 key={item.key}
                 href={item.href}
-                className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors"
+                className={`px-3 py-2 text-sm font-medium transition-colors relative ${
+                  isActiveRoute(item.href)
+                    ? 'text-red-600 font-semibold'
+                    : 'text-gray-700 hover:text-red-600'
+                }`}
               >
                 {item.label}
+                {isActiveRoute(item.href) && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-600 rounded-full"></div>
+                )}
               </a>
             ))}
           </div>
@@ -206,7 +222,11 @@ const Header = () => {
                 <a
                   key={item.key}
                   href={item.href}
-                  className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium"
+                  className={`block px-3 py-2 text-base font-medium border-l-4 transition-colors ${
+                    isActiveRoute(item.href)
+                      ? 'text-red-600 font-semibold border-red-600 bg-red-50'
+                      : 'text-gray-700 hover:text-red-600 border-transparent hover:border-red-200 hover:bg-gray-50'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

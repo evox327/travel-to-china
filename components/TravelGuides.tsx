@@ -42,6 +42,49 @@ const TravelGuides = () => {
       setGuides(data.guides || [])
     } catch (error) {
       console.error('Error fetching guides:', error)
+      // 静态数据备用方案
+      const staticGuides: Guide[] = [
+        {
+          _id: 'ultimate-beijing-guide',
+          title: { en: 'Ultimate Beijing Travel Guide', zh: '北京终极旅游指南' },
+          excerpt: { en: 'Complete 7-day Beijing travel guide covering the Great Wall, Forbidden City, local food, and insider tips for first-time visitors.', zh: '完整的北京7日旅游指南，涵盖长城、紫禁城、当地美食和初次游览贴士。' },
+          author: { name: 'Li Wei', image: '/images/avatar-li-wei.jpg' },
+          category: 'city-guide',
+          tags: ['Beijing', 'First Time', 'Culture', 'Food'],
+          coverImage: '/images/forbidden-city.jpg',
+          readTime: 15,
+          views: 24680,
+          likes: 892,
+          publishedAt: '2024-01-15'
+        },
+        {
+          _id: 'shanghai-food-adventure',
+          title: { en: 'Shanghai Food Adventure Guide', zh: '上海美食探险指南' },
+          excerpt: { en: 'Discover Shanghai\'s incredible food scene from street food to fine dining. Complete guide to xiaolongbao, night markets, and hidden local restaurants.', zh: '发现上海令人难以置信的美食场景，从街头小吃到精致餐饮。小笼包、夜市和隐藏当地餐厅的完整指南。' },
+          author: { name: 'Sarah Chen', image: '/images/avatar-sarah-chen.jpg' },
+          category: 'food-guide',
+          tags: ['Shanghai', 'Food', 'Restaurants', 'Street Food'],
+          coverImage: '/images/shanghai-food.jpg',
+          readTime: 12,
+          views: 18920,
+          likes: 654,
+          publishedAt: '2024-01-10'
+        },
+        {
+          _id: 'yunnan-adventure-guide',
+          title: { en: 'Yunnan Adventure Travel Guide', zh: '云南探险旅游指南' },
+          excerpt: { en: 'Epic hiking trails, mountain climbing, and outdoor adventures in one of China\'s most diverse provinces. Discover hidden valleys and ethnic cultures.', zh: '在中国最多样化的省份之一体验史诗般的徒步旅行、登山和户外探险。发现隐藏的山谷和民族文化。' },
+          author: { name: 'Michael Zhang', image: '/images/avatar-michael-zhang.jpg' },
+          category: 'adventure',
+          tags: ['Yunnan', 'Adventure', 'Hiking', 'Culture'],
+          coverImage: '/images/yunnan-adventure.jpg',
+          readTime: 18,
+          views: 15360,
+          likes: 723,
+          publishedAt: '2024-01-05'
+        }
+      ]
+      setGuides(staticGuides)
     } finally {
       setLoading(false)
     }

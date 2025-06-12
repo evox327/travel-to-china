@@ -141,6 +141,7 @@ wrangler pages deploy deploy --project-name=travel-to-china --commit-dirty=true
 - **构建失败**: 检查 search 页面和 API 路由问题
 
 ## 版本发布记录
+- **v0.13** (2025-06-11): 添加网站图标和PWA应用图标
 - **v0.12** (2025-06-11): 修复构建错误，成功部署到 Cloudflare Pages
 - **v0.11** (2025-06-10): 图片本地化完成
 - **v0.10** (2025-06-10): 修复构建错误，成功集成 Google Analytics
@@ -149,12 +150,13 @@ wrangler pages deploy deploy --project-name=travel-to-china --commit-dirty=true
 - **v0.7** (2025-06-10): 添加 Cloudflare Pages 部署配置和静态数据备用方案
 
 ## 当前部署信息
-- **Cloudflare Pages URL**: https://37733505.travel-to-china.pages.dev
+- **Cloudflare Pages URL**: https://b1911040.travel-to-china.pages.dev
 - **自定义域名**: https://explorechina.top
-- **GitHub 版本**: v0.12
+- **GitHub 版本**: v0.13 (待推送)
 - **Google Analytics**: ✅ 已激活 (G-BBBBVNMHG4)
+- **网站图标**: ✅ 已添加 SVG 格式图标
 
 ---
 *最后更新: 2025-06-11*
-*当前版本: v0.12*
+*当前版本: v0.13*
 *部署状态: ✅ 正常运行*
