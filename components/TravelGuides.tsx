@@ -45,43 +45,30 @@ const TravelGuides = () => {
       // 静态数据备用方案
       const staticGuides: Guide[] = [
         {
-          _id: 'ultimate-beijing-guide',
-          title: { en: 'Ultimate Beijing Travel Guide', zh: '北京终极旅游指南' },
-          excerpt: { en: 'Complete 7-day Beijing travel guide covering the Great Wall, Forbidden City, local food, and insider tips for first-time visitors.', zh: '完整的北京7日旅游指南，涵盖长城、紫禁城、当地美食和初次游览贴士。' },
-          author: { name: 'Li Wei', image: '/images/avatar-li-wei.jpg' },
-          category: 'city-guide',
+          _id: 'beijing-first-time',
+          title: { en: 'First Time in Beijing: Complete 7-Day Guide', zh: '北京初游：完整7日攻略' },
+          excerpt: { en: 'Everything you need to know for your first visit to China\'s capital city, including must-see attractions, local food, and cultural tips.', zh: '初次游览中国首都所需了解的一切，包括必看景点、当地美食和文化贴士。' },
+          author: { name: 'Li Wei', image: '/images/author-li-wei.jpg' },
+          category: 'first-time',
           tags: ['Beijing', 'First Time', 'Culture', 'Food'],
           coverImage: '/images/forbidden-city.jpg',
           readTime: 15,
-          views: 24680,
-          likes: 892,
-          publishedAt: '2024-01-15'
+          views: 2847,
+          likes: 89,
+          publishedAt: '2024-11-15'
         },
         {
-          _id: 'shanghai-food-adventure',
-          title: { en: 'Shanghai Food Adventure Guide', zh: '上海美食探险指南' },
-          excerpt: { en: 'Discover Shanghai\'s incredible food scene from street food to fine dining. Complete guide to xiaolongbao, night markets, and hidden local restaurants.', zh: '发现上海令人难以置信的美食场景，从街头小吃到精致餐饮。小笼包、夜市和隐藏当地餐厅的完整指南。' },
-          author: { name: 'Sarah Chen', image: '/images/avatar-sarah-chen.jpg' },
-          category: 'food-guide',
-          tags: ['Shanghai', 'Food', 'Restaurants', 'Street Food'],
+          _id: 'shanghai-food',
+          title: { en: 'Shanghai Food Paradise: Local Eats Guide', zh: '上海美食天堂：本地美食指南' },
+          excerpt: { en: 'Discover the best local food in Shanghai, from street snacks to fine dining, with insider tips on where locals actually eat.', zh: '发现上海最好的本地美食，从街头小吃到精致餐饮，内含当地人真正用餐地点的内幕贴士。' },
+          author: { name: 'Lisa Wang', image: '/images/author-lisa-wang.jpg' },
+          category: 'food',
+          tags: ['Shanghai', 'Food', 'Local Cuisine', 'Restaurants'],
           coverImage: '/images/shanghai-food.jpg',
           readTime: 12,
-          views: 18920,
-          likes: 654,
-          publishedAt: '2024-01-10'
-        },
-        {
-          _id: 'yunnan-adventure-guide',
-          title: { en: 'Yunnan Adventure Travel Guide', zh: '云南探险旅游指南' },
-          excerpt: { en: 'Epic hiking trails, mountain climbing, and outdoor adventures in one of China\'s most diverse provinces. Discover hidden valleys and ethnic cultures.', zh: '在中国最多样化的省份之一体验史诗般的徒步旅行、登山和户外探险。发现隐藏的山谷和民族文化。' },
-          author: { name: 'Michael Zhang', image: '/images/avatar-michael-zhang.jpg' },
-          category: 'adventure',
-          tags: ['Yunnan', 'Adventure', 'Hiking', 'Culture'],
-          coverImage: '/images/yunnan-adventure.jpg',
-          readTime: 18,
-          views: 15360,
-          likes: 723,
-          publishedAt: '2024-01-05'
+          views: 1923,
+          likes: 76,
+          publishedAt: '2024-11-10'
         }
       ]
       setGuides(staticGuides)
