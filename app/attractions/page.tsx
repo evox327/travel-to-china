@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
+import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -30,6 +31,8 @@ interface Attraction {
 
 const AttractionsPage = () => {
   const { data: session } = useSession()
+  const router = useRouter()
+  const pathname = usePathname()
   const [attractions, setAttractions] = useState<Attraction[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -39,6 +42,16 @@ const AttractionsPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
+
+  // Check for hash-based routing and redirect to detail page
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '')
+      if (hash && ['great-wall', 'forbidden-city', 'zhangjiajie'].includes(hash)) {
+        router.push(`/attractions/${hash}`)
+      }
+    }
+  }, [])
 
   const categories = [
     { value: 'all', label: 'All Categories' },

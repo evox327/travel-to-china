@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
+import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -29,6 +30,8 @@ interface Guide {
 
 const GuidesPage = () => {
   const { data: session } = useSession()
+  const router = useRouter()
+  const pathname = usePathname()
   const [guides, setGuides] = useState<Guide[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -37,6 +40,16 @@ const GuidesPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
+
+  // Check for hash-based routing and redirect to detail page
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '')
+      if (hash && (hash === 'beijing-first-time' || hash === 'shanghai-food')) {
+        router.push(`/guides/${hash}`)
+      }
+    }
+  }, [])
 
   const categories = [
     { value: 'all', label: 'All Guides', count: 156 },

@@ -34,6 +34,15 @@
       "static/chunks/38-a2d8d346b3d8d055.js",
       "static/chunks/app/admin/users/page-966224bbf4bcef5f.js"
     ],
+    "/admin/attractions/page": [
+      "static/chunks/webpack-8db40c0f0ce1f953.js",
+      "static/chunks/fd9d1056-a64ca1a0bc220bf4.js",
+      "static/chunks/117-e0f1c01a3c10ea39.js",
+      "static/chunks/main-app-6f22cb931919de4e.js",
+      "static/chunks/605-7e2c6c90299d1159.js",
+      "static/chunks/38-a2d8d346b3d8d055.js",
+      "static/chunks/app/admin/attractions/page-286a7755621fbb44.js"
+    ],
     "/about/page": [
       "static/chunks/webpack-8db40c0f0ce1f953.js",
       "static/chunks/fd9d1056-a64ca1a0bc220bf4.js",
@@ -51,24 +60,16 @@
       "static/chunks/605-7e2c6c90299d1159.js",
       "static/chunks/854-6c459d7d583d12bf.js",
       "static/chunks/484-03fed1a0098dead9.js",
-      "static/chunks/app/attractions/page-aa75c58f6b2cc610.js"
+      "static/chunks/app/attractions/page-3493e8620ec70abd.js"
     ],
-    "/admin/attractions/page": [
+    "/guides/[id]/page": [
       "static/chunks/webpack-8db40c0f0ce1f953.js",
       "static/chunks/fd9d1056-a64ca1a0bc220bf4.js",
       "static/chunks/117-e0f1c01a3c10ea39.js",
       "static/chunks/main-app-6f22cb931919de4e.js",
       "static/chunks/605-7e2c6c90299d1159.js",
-      "static/chunks/38-a2d8d346b3d8d055.js",
-      "static/chunks/app/admin/attractions/page-286a7755621fbb44.js"
-    ],
-    "/profile/page": [
-      "static/chunks/webpack-8db40c0f0ce1f953.js",
-      "static/chunks/fd9d1056-a64ca1a0bc220bf4.js",
-      "static/chunks/117-e0f1c01a3c10ea39.js",
-      "static/chunks/main-app-6f22cb931919de4e.js",
-      "static/chunks/605-7e2c6c90299d1159.js",
-      "static/chunks/app/profile/page-56e2cd8b57a6496a.js"
+      "static/chunks/484-03fed1a0098dead9.js",
+      "static/chunks/app/guides/[id]/page-edde6d7a35b5e930.js"
     ],
     "/attractions/[id]/page": [
       "static/chunks/webpack-8db40c0f0ce1f953.js",
@@ -87,25 +88,7 @@
       "static/chunks/605-7e2c6c90299d1159.js",
       "static/chunks/854-6c459d7d583d12bf.js",
       "static/chunks/484-03fed1a0098dead9.js",
-      "static/chunks/app/guides/page-a336c8f0d0704509.js"
-    ],
-    "/offline/page": [
-      "static/chunks/webpack-8db40c0f0ce1f953.js",
-      "static/chunks/fd9d1056-a64ca1a0bc220bf4.js",
-      "static/chunks/117-e0f1c01a3c10ea39.js",
-      "static/chunks/main-app-6f22cb931919de4e.js",
-      "static/chunks/605-7e2c6c90299d1159.js",
-      "static/chunks/484-03fed1a0098dead9.js",
-      "static/chunks/app/offline/page-8b4a426110790773.js"
-    ],
-    "/guides/[id]/page": [
-      "static/chunks/webpack-8db40c0f0ce1f953.js",
-      "static/chunks/fd9d1056-a64ca1a0bc220bf4.js",
-      "static/chunks/117-e0f1c01a3c10ea39.js",
-      "static/chunks/main-app-6f22cb931919de4e.js",
-      "static/chunks/605-7e2c6c90299d1159.js",
-      "static/chunks/484-03fed1a0098dead9.js",
-      "static/chunks/app/guides/[id]/page-edde6d7a35b5e930.js"
+      "static/chunks/app/guides/page-140684d0a3fad07a.js"
     ],
     "/page": [
       "static/chunks/webpack-8db40c0f0ce1f953.js",
@@ -116,6 +99,23 @@
       "static/chunks/854-6c459d7d583d12bf.js",
       "static/chunks/484-03fed1a0098dead9.js",
       "static/chunks/app/page-416b8fa1ebf230bb.js"
+    ],
+    "/offline/page": [
+      "static/chunks/webpack-8db40c0f0ce1f953.js",
+      "static/chunks/fd9d1056-a64ca1a0bc220bf4.js",
+      "static/chunks/117-e0f1c01a3c10ea39.js",
+      "static/chunks/main-app-6f22cb931919de4e.js",
+      "static/chunks/605-7e2c6c90299d1159.js",
+      "static/chunks/484-03fed1a0098dead9.js",
+      "static/chunks/app/offline/page-8b4a426110790773.js"
+    ],
+    "/profile/page": [
+      "static/chunks/webpack-8db40c0f0ce1f953.js",
+      "static/chunks/fd9d1056-a64ca1a0bc220bf4.js",
+      "static/chunks/117-e0f1c01a3c10ea39.js",
+      "static/chunks/main-app-6f22cb931919de4e.js",
+      "static/chunks/605-7e2c6c90299d1159.js",
+      "static/chunks/app/profile/page-56e2cd8b57a6496a.js"
     ],
     "/search/page": [
       "static/chunks/webpack-8db40c0f0ce1f953.js",
