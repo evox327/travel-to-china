@@ -123,7 +123,7 @@ const TravelGuides = () => {
         {/* Guides Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {guides.map((guide) => (
-            <Link 
+            <a 
               key={guide._id}
               href={`/guides/${guide._id}`}
               className="group bg-white rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer block"
@@ -216,7 +216,7 @@ const TravelGuides = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 

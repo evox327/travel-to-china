@@ -134,7 +134,7 @@ const FeaturedAttractions = () => {
         {/* Attractions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {attractions.map((attraction) => (
-            <Link 
+            <a 
               key={attraction._id}
               href={`/attractions/${attraction._id}`}
               className="group bg-white rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer block"
@@ -208,7 +208,7 @@ const FeaturedAttractions = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 

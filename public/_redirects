@@ -1,23 +1,16 @@
-# Specific guide routes - redirect to guides page with hash for client-side handling
-/guides/beijing-first-time /guides.html#beijing-first-time 302
-/guides/shanghai-food /guides.html#shanghai-food 302
-
-# Specific attraction routes - redirect to attractions page with hash
-/attractions/great-wall /attractions.html#great-wall 302
-/attractions/forbidden-city /attractions.html#forbidden-city 302
-/attractions/zhangjiajie /attractions.html#zhangjiajie 302
-
 # Static pages
 /about /about.html 200
 /profile /profile.html 200
 /search /search.html 200
 /offline /offline.html 200
 
-# General routes
+# General routes - exact matches first
 /attractions /attractions.html 200
-/attractions/* /attractions.html 200
 /guides /guides.html 200
-/guides/* /guides.html 200
+
+# Guide and Attraction detail routes - redirect to listings (exclude exact matches)
+/guides/:id /guides.html 200
+/attractions/:id /attractions.html 200
 /admin /admin.html 200
 /admin/* /admin.html 200
 

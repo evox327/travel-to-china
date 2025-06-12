@@ -43,15 +43,6 @@ const AttractionsPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
 
-  // Check for hash-based routing and redirect to detail page
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash.replace('#', '')
-      if (hash && ['great-wall', 'forbidden-city', 'zhangjiajie'].includes(hash)) {
-        router.push(`/attractions/${hash}`)
-      }
-    }
-  }, [])
 
   const categories = [
     { value: 'all', label: 'All Categories' },

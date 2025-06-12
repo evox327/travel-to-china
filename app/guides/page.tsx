@@ -41,15 +41,6 @@ const GuidesPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
 
-  // Check for hash-based routing and redirect to detail page
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash.replace('#', '')
-      if (hash && (hash === 'beijing-first-time' || hash === 'shanghai-food')) {
-        router.push(`/guides/${hash}`)
-      }
-    }
-  }, [])
 
   const categories = [
     { value: 'all', label: 'All Guides', count: 156 },
