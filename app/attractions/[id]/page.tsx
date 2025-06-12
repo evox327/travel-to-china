@@ -12,6 +12,123 @@ import {
   MessageCircle, ThumbsUp
 } from 'lucide-react'
 
+// Static data for Cloudflare deployment fallback
+const getStaticAttractionData = (id: string): Attraction | null => {
+  const attractions: Record<string, Attraction> = {
+    'forbidden-city': {
+      _id: 'forbidden-city',
+      name: { en: 'Forbidden City', zh: '紫禁城' },
+      description: { 
+        en: 'The Forbidden City, located in the heart of Beijing, served as the imperial palace for 24 emperors during the Ming and Qing dynasties. This magnificent complex, built between 1406 and 1420, is one of the most well-preserved palace complexes in the world and a UNESCO World Heritage Site.',
+        zh: '紫禁城位于北京市中心，是明清两朝24位皇帝的皇宫。这座宏伟的建筑群建于1406年至1420年间，是世界上保存最完整的宫殿建筑群之一，也是联合国教科文组织世界遗产。'
+      },
+      location: {
+        city: 'Beijing',
+        province: 'Beijing',
+        coordinates: { lat: 39.9163, lng: 116.3972 }
+      },
+      images: ['/images/forbidden-city.jpg'],
+      category: 'historical',
+      rating: 4.8,
+      reviewCount: 12847,
+      highlights: ['Imperial Architecture', 'UNESCO World Heritage', 'Palace Museum', 'Ancient Chinese Culture'],
+      ticketPrice: { adult: 60, child: 30, currency: 'CNY' },
+      duration: '3-4 hours',
+      bestTimeToVisit: ['Spring', 'Autumn'],
+      openingHours: { open: '08:30', close: '17:00', note: 'Closed on Mondays' },
+      contact: { 
+        phone: '+86-10-8500-7421', 
+        website: 'https://www.dpm.org.cn',
+        email: 'service@dpm.org.cn'
+      }
+    },
+    'great-wall': {
+      _id: 'great-wall',
+      name: { en: 'Great Wall of China', zh: '万里长城' },
+      description: { 
+        en: 'The Great Wall of China is a series of fortifications built across the historical northern borders of ancient Chinese states. Stretching over 13,000 miles, it is one of the most impressive architectural feats in human history and a symbol of Chinese civilization.',
+        zh: '中国长城是横跨中国古代北方边境的一系列防御工事。绵延13000多英里，是人类历史上最令人印象深刻的建筑壮举之一，也是中华文明的象征。'
+      },
+      location: {
+        city: 'Beijing',
+        province: 'Beijing',
+        coordinates: { lat: 40.4319, lng: 116.5704 }
+      },
+      images: ['/images/hero-great-wall-xlarge.jpg'],
+      category: 'historical',
+      rating: 4.9,
+      reviewCount: 25643,
+      highlights: ['Ancient Wonder', 'UNESCO World Heritage', 'Hiking Trails', 'Panoramic Views'],
+      ticketPrice: { adult: 45, child: 25, currency: 'CNY' },
+      duration: '4-6 hours',
+      bestTimeToVisit: ['Spring', 'Autumn'],
+      openingHours: { open: '07:00', close: '18:00' },
+      contact: { 
+        phone: '+86-10-6912-1886', 
+        website: 'https://www.mutianyugreatwall.com'
+      }
+    },
+    'zhangjiajie': {
+      _id: 'zhangjiajie',
+      name: { en: 'Zhangjiajie National Forest Park', zh: '张家界国家森林公园' },
+      description: { 
+        en: 'Zhangjiajie National Forest Park is famous for its towering sandstone pillars, which inspired the floating mountains in the movie Avatar. Located in Hunan Province, this UNESCO World Heritage site offers breathtaking natural beauty and unique geological formations.',
+        zh: '张家界国家森林公园以其高耸的砂岩柱而闻名，这些砂岩柱启发了电影《阿凡达》中的悬浮山。位于湖南省，这个联合国教科文组织世界遗产地提供了令人惊叹的自然美景和独特的地质构造。'
+      },
+      location: {
+        city: 'Zhangjiajie',
+        province: 'Hunan',
+        coordinates: { lat: 29.1167, lng: 110.4792 }
+      },
+      images: ['/images/zhangjiajie-mountains.jpg', '/images/zhangjiajie-hiking.jpg'],
+      category: 'nature',
+      rating: 4.7,
+      reviewCount: 8952,
+      highlights: ['Avatar Mountains', 'Glass Bridge', 'Cable Car', 'Hiking Trails'],
+      ticketPrice: { adult: 248, child: 120, currency: 'CNY' },
+      duration: '6-8 hours',
+      bestTimeToVisit: ['Spring', 'Summer', 'Autumn'],
+      openingHours: { open: '07:00', close: '18:00' },
+      contact: { 
+        phone: '+86-744-571-2301', 
+        website: 'https://www.zjjpark.com'
+      }
+    }
+  }
+  return attractions[id] || null
+}
+
+const getStaticReviewData = (attractionId: string): Review[] => {
+  return [
+    {
+      _id: 'review1',
+      user: {
+        name: 'Sarah Chen',
+        image: '/images/avatar-sarah-chen.jpg'
+      },
+      rating: 5,
+      title: 'Absolutely Amazing!',
+      content: 'One of the most incredible places I have ever visited. The architecture and history are breathtaking.',
+      images: [],
+      likes: 12,
+      createdAt: '2024-12-01T10:00:00Z'
+    },
+    {
+      _id: 'review2',
+      user: {
+        name: 'Michael Zhang',
+        image: '/images/avatar-michael-zhang.jpg'
+      },
+      rating: 4,
+      title: 'Great Experience',
+      content: 'Worth visiting, but can get quite crowded during peak season. Best to go early in the morning.',
+      images: [],
+      likes: 8,
+      createdAt: '2024-11-28T14:30:00Z'
+    }
+  ]
+}
+
 interface Attraction {
   _id: string
   name: Record<string, string>
@@ -87,12 +204,26 @@ const AttractionDetailPage = () => {
   const fetchAttractionDetails = async () => {
     try {
       const response = await fetch(`/api/attractions/${attractionId}`)
-      const data = await response.json()
-      
-      setAttraction(data.attraction)
-      setReviews(data.reviews)
+      if (response.ok) {
+        const data = await response.json()
+        setAttraction(data.attraction)
+        setReviews(data.reviews)
+      } else {
+        // Fallback to static data for Cloudflare deployment
+        const staticAttraction = getStaticAttractionData(attractionId)
+        if (staticAttraction) {
+          setAttraction(staticAttraction)
+          setReviews(getStaticReviewData(attractionId))
+        }
+      }
     } catch (error) {
       console.error('Error fetching attraction details:', error)
+      // Fallback to static data for Cloudflare deployment
+      const staticAttraction = getStaticAttractionData(attractionId)
+      if (staticAttraction) {
+        setAttraction(staticAttraction)
+        setReviews(getStaticReviewData(attractionId))
+      }
     }
     setLoading(false)
   }

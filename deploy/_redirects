@@ -1,2 +1,33 @@
+# API routes
 /api/* /api/index.html 200
+
+# Dynamic routes for attractions
+/attractions/forbidden-city /attractions.html 200
+/attractions/great-wall /attractions.html 200
+/attractions/terracotta-army /attractions.html 200
+/attractions/zhangjiajie /attractions.html 200
+/attractions/li-river /attractions.html 200
+/attractions/pandas /attractions.html 200
+
+# Dynamic routes for guides  
+/guides/beijing-first-time /guides.html 200
+/guides/shanghai-food /guides.html 200
+/guides/sichuan-culinary /guides.html 200
+/guides/yunnan-adventure /guides.html 200
+/guides/zhangjiajie-hiking /guides.html 200
+/guides/beijing-shanghai /guides.html 200
+
+# Fallback for other dynamic routes
+/attractions/* /attractions.html 200
+/guides/* /guides.html 200
+
+# Other pages
+/about /about.html 200
+/profile /profile.html 200
+/search /search.html 200
+/offline /offline.html 200
+/admin /admin.html 200
+/admin/* /admin.html 200
+
+# Homepage fallback (must be last)
 /* /index.html 200

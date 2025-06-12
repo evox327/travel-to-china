@@ -11,6 +11,147 @@ import {
   DollarSign, Utensils, Bed, Car
 } from 'lucide-react'
 
+// Static data for Cloudflare deployment fallback
+const getStaticGuideData = (id: string): Guide | null => {
+  const guides: Record<string, Guide> = {
+    'beijing-first-time': {
+      _id: 'beijing-first-time',
+      title: { en: 'First Time in Beijing: Complete 7-Day Guide', zh: '北京初游：完整7日攻略' },
+      excerpt: { 
+        en: 'Everything you need to know for your first visit to China\'s capital city, including must-see attractions, local food, and cultural tips.',
+        zh: '初次游览中国首都所需了解的一切，包括必看景点、当地美食和文化贴士。'
+      },
+      content: {
+        en: `# Welcome to Beijing: Your Complete 7-Day Guide
+
+Beijing, China's magnificent capital, offers first-time visitors an incredible journey through 3,000 years of history. This comprehensive guide will help you make the most of your week in this amazing city.
+
+## Day 1-2: Imperial Beijing
+Start with the iconic Forbidden City and Tiananmen Square. These UNESCO World Heritage sites showcase the grandeur of imperial China.
+
+## Day 3-4: The Great Wall Adventure
+Visit the Mutianyu section of the Great Wall for the best combination of accessibility and authentic experience.
+
+## Day 5-6: Cultural Immersion
+Explore hutongs, visit temples, and experience local markets. Don't miss the Temple of Heaven and Summer Palace.
+
+## Day 7: Modern Beijing
+Discover contemporary Beijing with its shopping districts, modern architecture, and vibrant nightlife.
+
+## Local Food Guide
+- **Peking Duck**: The city's signature dish
+- **Jianbing**: Street breakfast crepe
+- **Hot Pot**: Perfect for social dining
+- **Beijing Noodles**: Try zhajiangmian
+
+## Transportation Tips
+Use the extensive subway system and get a transportation card for convenience.`,
+        zh: '欢迎来到北京：完整7日指南\n\n北京是中国宏伟的首都，为初次游客提供了一次穿越3000年历史的不可思议的旅程。'
+      },
+      author: { _id: 'author1', name: 'Li Wei', image: '/images/author-li-wei.jpg' },
+      category: 'first-time',
+      tags: ['Beijing', 'First Time', 'Culture', 'Food'],
+      coverImage: '/images/forbidden-city.jpg',
+      images: ['/images/forbidden-city.jpg', '/images/hero-great-wall.jpg'],
+      readTime: 15,
+      views: 2847,
+      likes: 89,
+      publishedAt: '2024-11-15T10:00:00Z',
+      itinerary: [
+        {
+          day: 1,
+          title: 'Arrival & City Center',
+          description: 'Get oriented in Beijing and visit Tiananmen Square',
+          activities: ['Check into hotel', 'Visit Tiananmen Square', 'Explore Wangfujing Street'],
+          tips: ['Exchange money', 'Get local SIM card', 'Download translation app']
+        },
+        {
+          day: 2,
+          title: 'Forbidden City',
+          description: 'Full day exploring the imperial palace',
+          activities: ['Early morning Forbidden City visit', 'Jingshan Park for sunset views'],
+          tips: ['Book tickets online', 'Bring comfortable shoes', 'Allow full day']
+        }
+      ],
+      budget: [
+        {
+          category: 'Accommodation',
+          description: 'Hotel costs per night',
+          lowBudget: 200,
+          midBudget: 500,
+          highBudget: 1200,
+          currency: 'CNY'
+        },
+        {
+          category: 'Food',
+          description: 'Daily meal expenses',
+          lowBudget: 100,
+          midBudget: 300,
+          highBudget: 800,
+          currency: 'CNY'
+        }
+      ]
+    },
+    'shanghai-food': {
+      _id: 'shanghai-food',
+      title: { en: 'Shanghai Food Paradise: Local Eats Guide', zh: '上海美食天堂：本地美食指南' },
+      excerpt: {
+        en: 'Discover the best local food in Shanghai, from street snacks to fine dining, with insider tips on where locals actually eat.',
+        zh: '发现上海最好的本地美食，从街头小吃到精致餐饮，内含当地人真正用餐地点的内幕贴士。'
+      },
+      content: {
+        en: `# Shanghai Food Paradise: Your Ultimate Culinary Guide
+
+Shanghai's food scene is a delicious blend of traditional Shanghainese cuisine and international flavors. This guide will take you on a culinary journey through the city's best eats.
+
+## Must-Try Shanghainese Dishes
+- **Xiaolongbao**: Soup dumplings that are Shanghai's signature
+- **Shengjianbao**: Pan-fried soup buns
+- **Red-braised pork**: Sweet and savory comfort food
+- **Hairy crab**: Seasonal delicacy (autumn)
+
+## Best Food Districts
+- **Yu Garden area**: Traditional snacks
+- **French Concession**: International cuisine
+- **Nanjing Road**: Street food and restaurants
+- **Xintiandi**: Upscale dining`,
+        zh: '上海美食天堂：您的终极美食指南\n\n上海的美食场景是传统上海菜和国际风味的美味融合。'
+      },
+      author: { _id: 'author2', name: 'Lisa Wang', image: '/images/author-lisa-wang.jpg' },
+      category: 'food',
+      tags: ['Shanghai', 'Food', 'Local Cuisine', 'Restaurants'],
+      coverImage: '/images/shanghai-food.jpg',
+      images: ['/images/shanghai-food.jpg'],
+      readTime: 12,
+      views: 1923,
+      likes: 76,
+      publishedAt: '2024-11-10T14:30:00Z'
+    }
+  }
+  return guides[id] || null
+}
+
+const getStaticGuideReviews = (guideId: string): Review[] => {
+  return [
+    {
+      _id: 'review1',
+      user: { name: 'Sarah Chen', image: '/images/avatar-sarah-chen.jpg' },
+      rating: 5,
+      comment: 'Incredibly detailed and helpful guide! Used it for my Beijing trip and it was perfect.',
+      helpful: 15,
+      publishedAt: '2024-12-01T10:00:00Z'
+    },
+    {
+      _id: 'review2',
+      user: { name: 'Michael Zhang', image: '/images/avatar-michael-zhang.jpg' },
+      rating: 4,
+      comment: 'Great recommendations, especially for food. The itinerary was very practical.',
+      helpful: 8,
+      publishedAt: '2024-11-28T16:20:00Z'
+    }
+  ]
+}
+
 interface Guide {
   _id: string
   title: Record<string, string>
@@ -102,11 +243,19 @@ const GuideDetailPage = () => {
     setLoading(true)
     try {
       const response = await fetch(`/api/guides/${guideId}`)
-      const data = await response.json()
-      setGuide(data.guide)
+      if (response.ok) {
+        const data = await response.json()
+        setGuide(data.guide)
+      } else {
+        // Fallback to static data for Cloudflare deployment
+        const staticGuide = getStaticGuideData(guideId)
+        if (staticGuide) {
+          setGuide(staticGuide)
+        }
+      }
     } catch (error) {
       console.error('Error fetching guide:', error)
-      // 静态数据备用方案
+      // Fallback to static data for Cloudflare deployment
       const staticGuide: Guide = {
         _id: guideId,
         title: { en: 'Ultimate Beijing Travel Guide', zh: '北京终极旅游指南' },

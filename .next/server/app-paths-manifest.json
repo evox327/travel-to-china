@@ -1,5 +1,23 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/attractions/[id]/route": "app/api/attractions/[id]/route.js",
+  "/admin/page": "app/admin/page.js",
+  "/about/page": "app/about/page.js",
+  "/admin/attractions/page": "app/admin/attractions/page.js",
+  "/admin/users/page": "app/admin/users/page.js",
+  "/api/reviews/route": "app/api/reviews/route.js",
+  "/api/auth/register/route": "app/api/auth/register/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/guides/[id]/page": "app/guides/[id]/page.js",
+  "/attractions/[id]/page": "app/attractions/[id]/page.js",
+  "/api/guides/[id]/route": "app/api/guides/[id]/route.js",
+  "/api/search/route": "app/api/search/route.js",
   "/page": "app/page.js",
-  "/attractions/page": "app/attractions/page.js"
+  "/api/guides/route": "app/api/guides/route.js",
+  "/attractions/page": "app/attractions/page.js",
+  "/api/attractions/route": "app/api/attractions/route.js",
+  "/offline/page": "app/offline/page.js",
+  "/guides/page": "app/guides/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/search/page": "app/search/page.js"
 }
